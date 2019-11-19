@@ -2,14 +2,15 @@ const HEIGHT = window.innerHeight;
 const WIDTH = window.innerWidth;
 const RAINDROP_WIDTH = 2;
 
-let numberOfRaindrops = 500;
+let numberOfRaindrops = 100;
 let raindrops = [];
 let minSpeed = 10;
 let maxSpeed = 20;
 
+let raindropSlider;
+
 function setup() {
     createCanvas(WIDTH, HEIGHT);
-    print("Width: " + WIDTH + "Heıght: " + HEIGHT);
     for (let i = 0; i < numberOfRaindrops; i++) {
         raindrops.push(new Raindrop());
     }
@@ -32,7 +33,7 @@ class Raindrop {
 
     draw() {
         noStroke();
-        fill(3, 90, 252);
+        fill(3, 90, 252); //3, 90, 252
         rect(this.x, this.y, RAINDROP_WIDTH, this.raindropHeight);
     }
 
