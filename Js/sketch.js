@@ -2,7 +2,7 @@ const HEIGHT = window.innerHeight;
 const WIDTH = window.innerWidth;
 const RAINDROP_WIDTH = 2;
 
-let numberOfRaindrops = 100;
+let numberOfRaindrops;
 let raindrops = [];
 let minSpeed = 10;
 let maxSpeed = 20;
@@ -10,6 +10,7 @@ let maxSpeed = 20;
 let raindropSlider;
 
 function setup() {
+    numberOfRaindrops = document.getElementById("intensityRange").value;
     createCanvas(WIDTH, HEIGHT);
     for (let i = 0; i < numberOfRaindrops; i++) {
         raindrops.push(new Raindrop());
@@ -22,6 +23,29 @@ function draw() {
     for (let raindrop of raindrops) {
         raindrop.draw();
         raindrop.move();
+    }
+}
+
+function changeNumberOfRaindrops() {
+    let sliderValue = document.getElementById("intensityRange").value;
+    let difference = sliderValue - raindrops.length;
+    if (difference > 0) {
+        addRaindrops(difference);
+    } else if (difference < 0) {
+        removeRaindrops(difference);
+    }
+}
+
+function removeRaindrops(amount) {
+    amount *= -1;
+    for (let i = 0; i < amount; i++) {
+        raindrops.pop();
+    }
+}
+
+function addRaindrops(amount) {
+    for (let i = 0; i < amount; i++) {
+        raindrops.push(new Raindrop());
     }
 }
 

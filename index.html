@@ -1,18 +1,15 @@
-<link rel="stylesheet" href="libs/bootstrap.min.css">
-<script src="libs/jquery-3.4.1.min.js"></script>
-<script src="libs/popper.min.js"></script>
-<script src="libs/bootstrap.min.js"></script>
-
-<script src="/p5.min.js"></script>
+<html>
 
 <head>
+    <link rel="stylesheet" href="Css/bootstrap.min.css">
+
+    <title>Rain Effect</title>
+
+</head>
+
+<body>
+
     <div class="pos-f-t">
-        <div class="collapse" id="navbarToggleExternalContent">
-            <div class="bg-dark p-4">
-                <h4 class="text-white">Collapsed content</h4>
-                <span class="text-muted">Toggleable via the navbar brand.</span>
-            </div>
-        </div>
         <nav class="navbar navbar-dark bg-dark">
             <a class="navbar-brand" href="#">
                 Rain Effect
@@ -23,11 +20,34 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
         </nav>
+
+        <div class="collapse" id="navbarToggleExternalContent">
+            <div class="bg-dark p-4">
+                <ul class="list-group list-group-horizontal">
+                    <li class="list-group-item">
+                        <label for="intensityRange">Intensity</label>
+                        <input type="range" class="custom-range" min="50" max="500" value="100" id="intensityRange"
+                            oninput="changeNumberOfRaindrops()">
+                    </li>
+                    <li class="list-group-item">
+
+                    </li>
+                    <li class="list-group-item">
+
+                    </li>
+                </ul>
+
+            </div>
+        </div>
     </div>
-</head>
 
-<body>
+    <script src="Js/sketch.js"></script>
 
-    <script src="/sketch.js"></script>
+    <script src="Js/jquery-3.4.1.min.js"></script>
+    <script src="Js/popper.min.js"></script>
+    <script src="Js/bootstrap.min.js"></script>
 
+    <script src="Js/p5.min.js"></script>
 </body>
+
+</html>
