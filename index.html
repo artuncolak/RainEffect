@@ -13,12 +13,13 @@
 
     <div class="pos-f-t">
         <nav class="navbar navbar-dark bg-dark">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="/">
                 Rain Effect
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse"
                 data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
                 aria-expanded="false" aria-label="Toggle navigation">
+                Settings
                 <span class="navbar-toggler-icon"></span>
             </button>
         </nav>
@@ -28,11 +29,16 @@
                 <ul class="list-group list-group-horizontal">
                     <li class="list-group-item">
                         <label for="intensityRange">Intensity</label>
-                        <input type="range" class="custom-range" min="50" max="500" value="100" id="intensityRange"
+                        <input type="range" class="custom-range" min="50" max="500" value="200" id="intensityRange"
                             oninput="changeNumberOfRaindrops()">
                     </li>
                     <li class="list-group-item">
-                        <div class="color-picker"></div>
+                        <label>Raindrop Color</label>
+                        <div class="raindrop-picker"></div>
+                    </li>
+                    <li class="list-group-item">
+                        <label>Background Color</label>
+                        <div class="background-picker"></div>
                     </li>
                     <li class="list-group-item">
                         <label for="rainbowCheckbox">Rainbow</label>
@@ -43,61 +49,16 @@
                         </label>
                     </li>
                 </ul>
-
             </div>
         </div>
     </div>
-
-    <script src="Js/sketch.js"></script>
 
     <script src="Js/jquery-3.4.1.min.js"></script>
     <script src="Js/popper.min.js"></script>
     <script src="Js/bootstrap.min.js"></script>
     <script src="Js/pickr.min.js"></script>
+    <script src="Js/sketch.js"></script>
 
-    <script>
-        const pickr = Pickr.create({
-            el: '.color-picker',
-            theme: 'nano', // or 'monolith', or 'nano'
-
-            swatches: [
-                'rgba(244, 67, 54, 1)',
-                'rgba(233, 30, 99, 0.95)',
-                'rgba(156, 39, 176, 0.9)',
-                'rgba(103, 58, 183, 0.85)',
-                'rgba(63, 81, 181, 0.8)',
-                'rgba(33, 150, 243, 0.75)',
-                'rgba(3, 169, 244, 0.7)',
-                'rgba(0, 188, 212, 0.7)',
-                'rgba(0, 150, 136, 0.75)',
-                'rgba(76, 175, 80, 0.8)',
-                'rgba(139, 195, 74, 0.85)',
-                'rgba(205, 220, 57, 0.9)',
-                'rgba(255, 235, 59, 0.95)',
-                'rgba(255, 193, 7, 1)'
-            ],
-
-            components: {
-
-                // Main components
-                preview: true,
-                opacity: true,
-                hue: true,
-
-                // Input / output Options
-                interaction: {
-                    hex: true,
-                    rgba: true,
-                    hsla: true,
-                    hsva: true,
-                    cmyk: true,
-                    input: true,
-                    clear: true,
-                    save: true
-                }
-            }
-        });
-    </script>
 
     <script src="Js/p5.min.js"></script>
 </body>
