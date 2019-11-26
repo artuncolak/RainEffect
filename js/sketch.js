@@ -49,7 +49,7 @@ function getRandomRGBColor() {
 }
 
 
-function startRainbowEffect() {
+function startColorfulEffect() {
     let rainbowCheckbox = document.getElementById("rainbowCheckbox");
 
     if (rainbowCheckbox.checked == true) {
